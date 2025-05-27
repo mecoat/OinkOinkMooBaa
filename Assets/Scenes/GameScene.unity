@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c745b7fe8d45fe45bb2bb24f2ae437d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 6
-  gridHeight: 12
+  gridWidth: 8
+  gridHeight: 16
   tilePrefab: {fileID: 1367176707588975464, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
   cameraTrans: {fileID: 1840822657}
 --- !u!4 &1846863643
