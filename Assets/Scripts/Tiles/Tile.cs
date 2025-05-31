@@ -25,6 +25,11 @@ public class Tile : MonoBehaviour
     }
 
 
+    public bool GetSpawnable()
+    {
+        return isSpawnable;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

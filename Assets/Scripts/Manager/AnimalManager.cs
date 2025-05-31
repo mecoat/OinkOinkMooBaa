@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AnimalManager : MonoBehaviour
 {
@@ -19,18 +20,29 @@ public class AnimalManager : MonoBehaviour
 
     public void SpawnAnimals()
     {
-        var animalCount = 3;
+        int animalCount = 3;
 
         for (int i=0; i< animalCount; i++)
         {
             //var randomPrefab = getRandomAnimal<BaseAnimal>(Animal.duck);
-            var randomPrefab = getRandomAnimal<BaseAnimal>();
+            //var randomPrefab = getRandomAnimal<BaseAnimal>();
+
+            var randomPrefab = animals[Random.Range(0, animals.Count - 1)].animalPrefab;
+
+            var spawnedAnimal = Instantiate(randomPrefab);
+            var randomSpawnTile = GridManager.Instance.GetSpawnTile();
+
+            spawnedAnimal.transform.position = randomSpawnTile.transform.position;
         }
+
+        GameManager.Instance.UpdateGameState(GameState.Playing);
     }
 
     //private T getRandomAnimal<T>(Animal animal) where T : BaseAnimal
     private T getRandomAnimal<T>() where T : BaseAnimal
     {
+        Debug.Log("calling getrandAn");
+
         //return (T)animals.Where(u => u.Animal == animal).OrderBy(o => Random.value).First().animalPrefab;
         return (T)animals.OrderBy(o => Random.value).First().animalPrefab;
     }

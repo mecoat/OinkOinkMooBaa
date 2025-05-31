@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
                 SpawnPens();
                 break;
             case GameState.SpawnAnimals:
-                SpawnAnimals();
+                AnimalManager.Instance.SpawnAnimals();
                 break;
             
             case GameState.Playing:
@@ -52,12 +52,6 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.SpawnAnimals);
     }
 
-
-    private void SpawnAnimals()
-    {
-        Debug.Log("Spawning animals");
-
-    }
 
     // Start is called before the first frame update
     void Start()
