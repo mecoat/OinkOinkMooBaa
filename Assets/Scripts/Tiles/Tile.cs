@@ -11,6 +11,12 @@ public class Tile : MonoBehaviour
     [SerializeField]
     protected SpriteRenderer tileRenderer;
 
+    [SerializeField]
+    private bool isSpawnable;
+
+    public bool isOccupied;
+
+
     //public void Init(bool isOffset, bool isEdge)
     //public void Init(bool isOffset)
     public virtual void Init(int x, int y)

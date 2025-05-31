@@ -67,7 +67,7 @@ public class GridManager : MonoBehaviour
 
         cameraTrans.transform.position = new Vector3((float)gridWidth / 2 - .5f, (float)gridHeight / 2 - .5f, -10);
 
-        GameManager.Instance.UpdateGameState(GameState.SpawnAnimals);
+        GameManager.Instance.UpdateGameState(GameState.SpawnPens);
     }
 
     
