@@ -23,12 +23,19 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.Spawning:
+            case GameState.GenerateGrid:
+                GridManager.Instance.GenerateGrid();
+                break;
+            case GameState.SpawnPens:
+                break;
+            case GameState.SpawnAnimals:
                 SpawnAnimals();
                 break;
             case GameState.Playing:
                 break;
             case GameState.Success:
+                break;
+            case GameState.Fail:
                 break;
             default:
                 break;
@@ -45,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateGameState(GameState.Spawning);
+        UpdateGameState(GameState.GenerateGrid);
     }
 
     // Update is called once per frame
@@ -57,7 +64,10 @@ public class GameManager : MonoBehaviour
 
 public enum GameState
 {
-    Spawning,
+    GenerateGrid,
+    SpawnPens,
+    SpawnAnimals,
     Playing,
-    Success
+    Success,
+    Fail
 }
