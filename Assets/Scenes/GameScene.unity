@@ -702,7 +702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridWidth: 8
   gridHeight: 16
-  tilePrefab: {fileID: 1367176707588975464, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
+  farmTile: {fileID: -3567958324010434050, guid: 0339bc296aa521f41a09633c7e22abe3, type: 3}
+  pathTile: {fileID: 6875913510532649201, guid: 072fe69c0c514154cacaabd612f7fc0a, type: 3}
+  edgeTile: {fileID: -3516175108956897043, guid: 3982c3320b1cae246a819443f19e95a8, type: 3}
   cameraTrans: {fileID: 1840822657}
 --- !u!4 &1846863643
 Transform:

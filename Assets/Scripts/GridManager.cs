@@ -9,7 +9,7 @@ public class GridManager : MonoBehaviour
     private int gridWidth, gridHeight;
 
     [SerializeField]
-    private Tile tilePrefab;
+    private Tile farmTile, pathTile, edgeTile;
 
     [SerializeField]
     private Transform cameraTrans;
@@ -32,12 +32,28 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity);
+                Tile selectedTile;
+
+                if (x == 0 || x == gridWidth - 1 || y ==0 || y == gridHeight - 1)
+                {
+                    selectedTile = edgeTile;
+                }
+                else if (x == 1 || x == gridWidth - 2 || y == 1 || y == gridHeight - 2)
+                {
+                    selectedTile = pathTile;
+                }
+                else
+                {
+                    selectedTile = farmTile;
+                }
+
+                var spawnedTile = Instantiate(selectedTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 
-                var isOffset = ((x + y) % 2 == 0);
-                var isEdge = (x < 2 || x >= gridWidth - 2 || y < 2 || y >= gridHeight - 2);
-                spawnedTile.Init(isOffset, isEdge);
+                //var isEdge = (x < 2 || x >= gridWidth - 2 || y < 2 || y >= gridHeight - 2);
+                //spawnedTile.Init(isOffset, isEdge);
+                //spawnedTile.Init(isOffset);
+                spawnedTile.Init(x,y);
                 //spawnedTile.Init(isOffset, false);
             }
         }
