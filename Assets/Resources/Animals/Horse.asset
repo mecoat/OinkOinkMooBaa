@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animal: 4
   animalPrefab: {fileID: 5821913427538654713, guid: c7ac1ea5fad2e2242aa6cb1b217588ea, type: 3}
-  animalSound: {fileID: 0}
+  animalSound: {fileID: 8300000, guid: 6524b344a65752142b6bee47182aba19, type: 3}
