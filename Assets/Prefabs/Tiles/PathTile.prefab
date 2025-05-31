@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2044265388979334930, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044265388979334930, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044265388979334930, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4056604
+      objectReference: {fileID: 0}
     - target: {fileID: 4918956186418950944, guid: 1942c990bef5fde4296ae7370bcb6573, type: 3}
       propertyPath: m_Name
       value: PathTile
@@ -82,6 +94,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef67aeb27ce247d42ae634314e8d2a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColour: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
-  offsetColour: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
   tileRenderer: {fileID: 2058739888881035763}

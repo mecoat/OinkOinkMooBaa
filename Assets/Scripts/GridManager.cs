@@ -50,10 +50,10 @@ public class GridManager : MonoBehaviour
                 var spawnedTile = Instantiate(selectedTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 
-                var isOffset = ((x + y) % 2 == 0);
                 //var isEdge = (x < 2 || x >= gridWidth - 2 || y < 2 || y >= gridHeight - 2);
                 //spawnedTile.Init(isOffset, isEdge);
-                spawnedTile.Init(isOffset);
+                //spawnedTile.Init(isOffset);
+                spawnedTile.Init(x,y);
                 //spawnedTile.Init(isOffset, false);
             }
         }
