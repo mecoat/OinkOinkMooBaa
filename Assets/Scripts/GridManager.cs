@@ -5,6 +5,8 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
 
+    public static GridManager Instance;
+
     [SerializeField]
     private int gridWidth, gridHeight;
 
@@ -14,10 +16,15 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private Transform cameraTrans;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GenerateGrid();
+        // GenerateGrid();
     }
 
     // Update is called once per frame
@@ -26,7 +33,7 @@ public class GridManager : MonoBehaviour
         
     }
 
-    private void GenerateGrid()
+    public void GenerateGrid()
     {
         for (int x = 0; x < gridWidth; x++)
         {
@@ -59,5 +66,9 @@ public class GridManager : MonoBehaviour
         }
 
         cameraTrans.transform.position = new Vector3((float)gridWidth / 2 - .5f, (float)gridHeight / 2 - .5f, -10);
+
+        GameManager.Instance.UpdateGameState(GameState.SpawnAnimals);
     }
+
+    
 }
