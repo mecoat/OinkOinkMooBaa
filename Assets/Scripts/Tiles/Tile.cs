@@ -5,14 +5,16 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     [SerializeField]
-    private Color baseColour, offsetColour, edgeColour;
+    private Color baseColour, offsetColour;
+    //private Color baseColour, offsetColour, edgeColour;
 
     [SerializeField]
     private SpriteRenderer tileRenderer;
 
-    public void Init(bool isOffset, bool isEdge)
+    //public void Init(bool isOffset, bool isEdge)
+    public void Init(bool isOffset)
     {
-        tileRenderer.color = isEdge ? edgeColour : isOffset ? offsetColour : baseColour;
+        tileRenderer.color = isOffset ? offsetColour : baseColour;
     }
 
 
