@@ -32,7 +32,7 @@ public class AnimalManager : MonoBehaviour
             var spawnedAnimal = Instantiate(randomPrefab);
             var randomSpawnTile = GridManager.Instance.GetSpawnTile();
 
-            spawnedAnimal.transform.position = randomSpawnTile.transform.position;
+            randomSpawnTile.SetAnimal(spawnedAnimal);
         }
 
         GameManager.Instance.UpdateGameState(GameState.Playing);

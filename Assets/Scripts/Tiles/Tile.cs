@@ -30,6 +30,14 @@ public class Tile : MonoBehaviour
         return isSpawnable;
     }
 
+    public void SetAnimal (BaseAnimal animal)
+    {
+        animal.transform.position = transform.position;
+        isOccupied = true;
+
+        animal.homeTile = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
