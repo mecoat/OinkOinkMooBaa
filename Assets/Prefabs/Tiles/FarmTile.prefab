@@ -82,7 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec764766de495645a6755a33fcd3552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileRenderer: {fileID: 4448917861757506459}
+  isSpawnable: 1
+  isOccupied: 0
   baseColour: {r: 0, g: 0.19758391, b: 1, a: 1}
   offsetColour: {r: 1, g: 0, b: 0.7534723, a: 1}
-  edgeColour: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-  tileRenderer: {fileID: 4448917861757506459}

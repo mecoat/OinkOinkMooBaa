@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b3f0d430f4c434388acc9e78330321, type: 3}
+  m_Name: Hen
+  m_EditorClassIdentifier: 
+  Animal: 5
+  animalPrefab: {fileID: -6534489814668623271, guid: e6c18ed3ff4be894093a760f491d7f8d, type: 3}
+  animalSound: {fileID: 8300000, guid: c5f9885f2065335499e78a0eff43855e, type: 3}
