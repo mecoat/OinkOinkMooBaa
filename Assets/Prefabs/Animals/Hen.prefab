@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5921388247734270357
+--- !u!1001 &8821270911536008255
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1941076091223910400, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Color.b
-      value: 0.38430044
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1941076091223910400, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Color.g
-      value: 0.38430044
+      value: 0.6332027
       objectReference: {fileID: 0}
     - target: {fileID: 1941076091223910400, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Color.r
-      value: 0.6415094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3050084682888156262, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6491182088285533110, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Name
-      value: Cow
+      value: Hen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70,22 +70,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6491182088285533110, guid: 947981ce02697804389bf4045717543e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 887071095508540581}
+      addedObject: {fileID: -6534489814668623271}
   m_SourcePrefab: {fileID: 100100000, guid: 947981ce02697804389bf4045717543e, type: 3}
---- !u!1 &592698935881796131 stripped
+--- !u!1 &2341375512514150281 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6491182088285533110, guid: 947981ce02697804389bf4045717543e, type: 3}
-  m_PrefabInstance: {fileID: 5921388247734270357}
+  m_PrefabInstance: {fileID: 8821270911536008255}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &887071095508540581
+--- !u!114 &-6534489814668623271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592698935881796131}
+  m_GameObject: {fileID: 2341375512514150281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e9098b362349240be0e2e8b90b9a87, type: 3}
+  m_Script: {fileID: 11500000, guid: e5cbc39ad685fe349a6de81961072cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
