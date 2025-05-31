@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
             case GameState.GenerateGrid:
                 GridManager.Instance.GenerateGrid();
                 break;
-            case GameState.SpawnPens:
-                break;
             case GameState.SpawnAnimals:
                 SpawnAnimals();
                 break;
+            case GameState.SpawnPens:
+                SpawnPens();
+                break;
+            
             case GameState.Playing:
                 break;
             case GameState.Success:
@@ -44,8 +46,15 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    private void SpawnPens()
+    {
+        Debug.Log("Spawning pens");
+    }
+
+
     private void SpawnAnimals()
     {
+        Debug.Log("Spawning animals");
 
     }
 
