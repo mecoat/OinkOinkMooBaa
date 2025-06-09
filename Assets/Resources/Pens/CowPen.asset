@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87ff943af99759349ae4add45e088fab, type: 3}
-  m_Name: Hen
+  m_Name: CowPen
   m_EditorClassIdentifier: 
-  Pen: 5
-  Animal: 5
-  penPrefab: {fileID: -4323254229955217217, guid: 2e5c01ea6add0bf429d28539441a542e, type: 3}
-  animalSound: {fileID: 8300000, guid: c5f9885f2065335499e78a0eff43855e, type: 3}
+  Pen: 1
+  Animal: {fileID: 11400000, guid: 56b920817ee36fe49855181f0112712e, type: 2}
+  penPrefab: {fileID: 4060879973178700958, guid: d21b123729efe2641817f505d29b59fc, type: 3}
+  animalSound: {fileID: 8300000, guid: 59efb8991f6ed344684df0b404655ab4, type: 3}

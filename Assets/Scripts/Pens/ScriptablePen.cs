@@ -7,7 +7,7 @@ public class ScriptablePen : ScriptableObject
 {
     public Pen Pen;
 
-    public Animal Animal;
+    public ScriptableAnimal Animal;
 
     public BasePen penPrefab;
 

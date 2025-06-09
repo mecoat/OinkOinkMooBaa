@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87ff943af99759349ae4add45e088fab, type: 3}
-  m_Name: Duck
+  m_Name: DuckPen
   m_EditorClassIdentifier: 
   Pen: 3
-  Animal: 3
+  Animal: {fileID: 11400000, guid: 4cb9119c48a35e2489a78a2b4c0c669a, type: 2}
   penPrefab: {fileID: -7489799335515768708, guid: 483832e3d9ba6f24eaa11bc75de3af74, type: 3}
   animalSound: {fileID: 8300000, guid: 7f1f32e9d8b66844593bce8e746b4d6e, type: 3}

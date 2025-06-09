@@ -17,12 +17,24 @@ public class PenManager : MonoBehaviour
         pens = Resources.LoadAll<ScriptablePen>("Pens").ToList();
     }
 
-
-    public void SpawnPens()
+    public void SpawnPen(PensToSpawn pen)
     {
-        Debug.Log("Spawning pens");
-        GameManager.Instance.UpdateGameState(GameState.SpawnAnimals);
+        //Debug.Log("Spawning " + pen.pen + " @ " + pen.spawnSite + " with " + pen.noAnimals.ToString() + " animals");
+        Debug.Log("Spawning " + " @ " + pen.spawnSite + " with " + pen.noAnimals.ToString() + " animals");
+
+        if (pen.spawnSite == SpawnSite.leftWhole)
+        {
+            var spawnedPen = Instantiate(pen.pen.penPrefab);
+
+
+        }
     }
+
+    //public void SpawnPens()
+    //{
+    //  Debug.Log("Spawning pens");
+    //GameManager.Instance.UpdateGameState(GameState.SpawnAnimals);
+    //}
 
 
     // Start is called before the first frame update

@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +14,17 @@ public class GameManager : MonoBehaviour
 
     public static event Action<GameState> OnGameStateChanged;
 
+    private List<ScriptablePen> pens;
+
+    private List<PensToSpawn> pensToSpawn;
+
     private void Awake()
     {
         Instance = this;
+
+        pens = Resources.LoadAll<ScriptablePen>("Pens").ToList();
+        //Debug.Log("pens " + pens[0]);
+
     }
 
     public void UpdateGameState(GameState newState)
@@ -27,7 +38,14 @@ public class GameManager : MonoBehaviour
                 GridManager.Instance.GenerateGrid();
                 break;
             case GameState.SpawnPens:
-                PenManager.Instance.SpawnPens();
+                foreach (PensToSpawn pen in pensToSpawn)
+                {
+                    PenManager.Instance.SpawnPen(pen);
+                }
+
+                //PenManager.Instance.SpawnPens();
+
+                UpdateGameState(GameState.SpawnAnimals);
                 break;
             case GameState.SpawnAnimals:
                 AnimalManager.Instance.SpawnAnimals();
@@ -50,6 +68,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pensToSpawn = new List<PensToSpawn> { new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftWhole, noAnimals = 2 } };
+        Debug.Log("list = " + pensToSpawn[0].pen + " " + pensToSpawn[0].spawnSite + " " + pensToSpawn[0].noAnimals.ToString());
+
         UpdateGameState(GameState.GenerateGrid);
     }
 
@@ -69,3 +90,4 @@ public enum GameState
     Success,
     Fail
 }
+
