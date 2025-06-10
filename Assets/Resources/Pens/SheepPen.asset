@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff943af99759349ae4add45e088fab, type: 3}
+  m_Name: SheepPen
+  m_EditorClassIdentifier: 
+  Pen: 2
+  Animal: {fileID: 11400000, guid: b56109f4f0220b046b25e8b6c0831198, type: 2}
+  penPrefab: {fileID: 8829165108740437717, guid: 1bec38c886fa5e94799907852b0109e8, type: 3}
+  animalSound: {fileID: 8300000, guid: 9fb12906474c38d478b3c619646731c7, type: 3}

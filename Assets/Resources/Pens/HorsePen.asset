@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff943af99759349ae4add45e088fab, type: 3}
+  m_Name: HorsePen
+  m_EditorClassIdentifier: 
+  Pen: 4
+  Animal: {fileID: 11400000, guid: f925cc5efe1016b428372ad6d7766197, type: 2}
+  penPrefab: {fileID: -251704902833337639, guid: eec372a8fbc7f36419f677cbdbc91d8e, type: 3}
+  animalSound: {fileID: 8300000, guid: 6524b344a65752142b6bee47182aba19, type: 3}

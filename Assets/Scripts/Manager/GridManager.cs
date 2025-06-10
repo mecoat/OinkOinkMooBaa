@@ -104,4 +104,14 @@ public class GridManager : MonoBehaviour
 
         return randTile;
     }
+
+    public int getGridHeight()
+    {
+        return (gridHeight);
+    }
+
+    public int getGridWidth()
+    {
+        return gridWidth;
+    }
 }
