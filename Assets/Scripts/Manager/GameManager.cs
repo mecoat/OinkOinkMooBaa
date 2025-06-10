@@ -68,8 +68,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pensToSpawn = new List<PensToSpawn> { new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftWhole, noAnimals = 2 } };
-        Debug.Log("list = " + pensToSpawn[0].pen + " " + pensToSpawn[0].spawnSite + " " + pensToSpawn[0].noAnimals.ToString());
+        pensToSpawn = new List<PensToSpawn> { new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftWhole, noAnimals = 2 }, 
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightWhole, noAnimals = 3 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.top, noAnimals = 1 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.bottom, noAnimals = 2 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftTop, noAnimals = 1 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftBottom, noAnimals = 3 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightTop, noAnimals = 2 },
+                                                new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightBottom, noAnimals = 1 } };
+        //Debug.Log("list = " + pensToSpawn[0].pen + " " + pensToSpawn[0].spawnSite + " " + pensToSpawn[0].noAnimals.ToString());
 
         UpdateGameState(GameState.GenerateGrid);
     }

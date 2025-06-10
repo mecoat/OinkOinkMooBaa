@@ -17,6 +17,6 @@ public enum SpawnSite
     rightWhole,
     rightTop,
     rightBottom,
-    Top,
+    top,
     bottom
 }
