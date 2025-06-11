@@ -46,9 +46,19 @@ public class GameManager : MonoBehaviour
                 //PenManager.Instance.SpawnPens();
 
                 UpdateGameState(GameState.SpawnAnimals);
+
                 break;
             case GameState.SpawnAnimals:
-                AnimalManager.Instance.SpawnAnimals();
+
+                for (var i = 0; i < pensToSpawn.Count; i++)
+                {
+                    AnimalManager.Instance.SpawnAnimal(pensToSpawn[i].pen.Animal, pensToSpawn[i].noAnimals);
+
+                }
+
+
+                UpdateGameState(GameState.Playing);
+
                 break;
             
             case GameState.Playing:
@@ -75,10 +85,10 @@ public class GameManager : MonoBehaviour
         pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightWhole, noAnimals = 3 });
         pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.top, noAnimals = 1 });
         pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.bottom, noAnimals = 2 });
-        pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftTop, noAnimals = 1 });
-        pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftBottom, noAnimals = 3 });
-        pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightTop, noAnimals = 2 });
-        pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightBottom, noAnimals = 1 });
+        //pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftTop, noAnimals = 1 });
+        //pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.leftBottom, noAnimals = 3 });
+        //pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightTop, noAnimals = 2 });
+        //pensToSpawn.Add(new PensToSpawn { pen = pens[Random.Range(0, pens.Count - 1)], spawnSite = SpawnSite.rightBottom, noAnimals = 1 });
 
         UpdateGameState(GameState.GenerateGrid);
     }
