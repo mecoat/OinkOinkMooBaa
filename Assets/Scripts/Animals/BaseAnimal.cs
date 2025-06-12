@@ -9,6 +9,9 @@ public class BaseAnimal : MonoBehaviour
     [SerializeField]
     private AudioClip animalSound;
 
+    [SerializeField]
+    private AudioClip badCollideSound;
+
     //holder for the desired Audiosource on the object
     private AudioSource sound;
 
