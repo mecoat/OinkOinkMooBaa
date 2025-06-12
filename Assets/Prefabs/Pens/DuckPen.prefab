@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 570502537557654633, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Name
-      value: Duck
+      value: DuckPen
       objectReference: {fileID: 0}
     - target: {fileID: 1521493473411493630, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Color.b
@@ -89,3 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73db6552bafc8342a54b8ae92c26cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noAnimals: 0
+  animalSound: {fileID: 8300000, guid: 7f1f32e9d8b66844593bce8e746b4d6e, type: 3}

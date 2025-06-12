@@ -10,9 +10,6 @@ public class ScriptablePen : ScriptableObject
     public ScriptableAnimal Animal;
 
     public BasePen penPrefab;
-
-    public AudioClip animalSound;
-
 }
 
 public enum Pen

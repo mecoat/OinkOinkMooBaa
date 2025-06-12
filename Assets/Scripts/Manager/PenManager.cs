@@ -66,6 +66,8 @@ public class PenManager : MonoBehaviour
             spawnedPen.transform.localScale = new Vector3(1f, (GridManager.Instance.getGridHeight() - 2) / 2f, 0f);
             spawnedPen.transform.position = new Vector3(GridManager.Instance.getGridWidth() - 1f, (GridManager.Instance.getGridHeight() / 4) * 3f - 1, 0f);
         }
+
+        spawnedPen.noAnimals = pen.noAnimals;
     }
 
     //public void SpawnPens()

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 570502537557654633, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Name
-      value: Cow
+      value: CowPen
       objectReference: {fileID: 0}
     - target: {fileID: 1521493473411493630, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Color.b
@@ -89,3 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c12f1153b1b73547a43e2a01efbb718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noAnimals: 0
+  animalSound: {fileID: 8300000, guid: 59efb8991f6ed344684df0b404655ab4, type: 3}
