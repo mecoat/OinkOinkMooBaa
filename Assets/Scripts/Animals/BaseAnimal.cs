@@ -37,7 +37,15 @@ public class BaseAnimal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isMoving)
+        {
+            rb.velocity = Vector2.zero;
+            if (transform.position != homeTile.transform.position)
+            {
+                transform.position = homeTile.transform.position;
+                Debug.Log("moving home");
+            }
+        }
     }
 
     // According to https://docs.unity3d.com/2022.3/Documentation/Manual/CrossPlatformConsiderations.html should work on mobile too
@@ -50,20 +58,22 @@ public class BaseAnimal : MonoBehaviour
         sound.Play();
 
         offset = GetMousePos() - (Vector2)transform.position;
+
+        rb.constraints = RigidbodyConstraints2D.None;
     }
 
     private void OnMouseUp()
     {
-        sound.Stop();
-
-        transform.position = homeTile.transform.position;
-
-        isMoving = false;
+        stopMoving();
     }
 
     private void OnMouseDrag()
     {
-        rb.MovePosition (GetMousePos() - offset);
+        if (isMoving)
+        {
+            rb.MovePosition(GetMousePos() - offset);
+        }
+        
     }
 
     Vector2 GetMousePos()
@@ -71,9 +81,30 @@ public class BaseAnimal : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit");
         Debug.Log(collision.gameObject.tag);
+
+        if (collision.gameObject.tag == "Animal")
+        {
+            Debug.Log("hit animal");
+
+            stopMoving();
+
+            sound.PlayOneShot(badCollideSound);
+
+        }
     }
+
+    private void stopMoving()
+    {
+        sound.Stop();
+
+        transform.position = homeTile.transform.position;
+
+        isMoving = false;
+
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
 }
