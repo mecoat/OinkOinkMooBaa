@@ -92,3 +92,4 @@ MonoBehaviour:
   homeTile: {fileID: 0}
   animalSound: {fileID: 8300000, guid: 9fb12906474c38d478b3c619646731c7, type: 3}
   badCollideSound: {fileID: 8300000, guid: 14a41ea9dfdfb9c42beda62741760f07, type: 3}
+  goodCollideSound: {fileID: 8300000, guid: 8a97e26a2c039594ea093ad896fce4d8, type: 3}

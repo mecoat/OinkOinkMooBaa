@@ -12,6 +12,9 @@ public class BaseAnimal : MonoBehaviour
     [SerializeField]
     private AudioClip badCollideSound;
 
+    [SerializeField]
+    private AudioClip goodCollideSound;
+
     //holder for the desired Audiosource on the object
     private AudioSource sound;
 
@@ -83,17 +86,54 @@ public class BaseAnimal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        stopMoving();
+
         Debug.Log(collision.gameObject.tag);
 
         if (collision.gameObject.tag == "Animal")
         {
             Debug.Log("hit animal");
 
-            stopMoving();
-
             sound.PlayOneShot(badCollideSound);
 
+        } 
+        else if (collision.gameObject.tag == "Pen")
+        {
+
+            var penColliided = collision.gameObject.GetComponent<BasePen>();
+            //Debug.Log("hit Pen");
+
+            //Debug.Log(penColliided.targetAnimal);
+            //Debug.Log(this.gameObject);
+
+            if (penColliided.targetAnimal.name == this.gameObject.name)
+            {
+                Debug.Log("match");
+                bool checkMatch = penColliided.CheckMatch();
+
+                if (!checkMatch)
+                {
+                    Debug.Log("play bad");
+                    sound.PlayOneShot(badCollideSound);
+                } 
+                else
+                {
+                    Debug.Log("play good");
+                    AudioSource.PlayClipAtPoint(goodCollideSound, (Vector2)transform.position);
+                    //sound.PlayOneShot(goodCollideSound);
+                    gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                sound.PlayOneShot(badCollideSound);
+
+            }
+
+            Debug.Log(penColliided.noAnimals);
         }
+
+
     }
 
     private void stopMoving()

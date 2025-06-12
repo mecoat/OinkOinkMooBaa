@@ -68,6 +68,7 @@ public class PenManager : MonoBehaviour
         }
 
         spawnedPen.noAnimals = pen.noAnimals;
+        spawnedPen.targetAnimal = pen.pen.Animal.animalPrefab.gameObject;
     }
 
     //public void SpawnPens()
