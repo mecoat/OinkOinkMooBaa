@@ -91,7 +91,7 @@ public class GridManager : MonoBehaviour
         //return farmTiles.OrderBy(tiles => Random.value).First().value;
         //return farmTiles.Where(t=>t.key.x <width).OrderBy(t=>Random.value).First().value;
         Vector2 randKey = farmTilesKeys[Random.Range(0, farmTilesKeys.Count)];
-        Debug.Log("spawn tle = " + farmTiles[randKey]);
+        //Debug.Log("spawn tle = " + farmTiles[randKey]);
 
         Tile randTile = farmTiles[randKey];
 
