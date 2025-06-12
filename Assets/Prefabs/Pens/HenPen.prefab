@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 570502537557654633, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Name
-      value: Hen
+      value: HenPen
       objectReference: {fileID: 0}
     - target: {fileID: 1521493473411493630, guid: ca4c3e81c78b9834b80877cd4481324a, type: 3}
       propertyPath: m_Color.b
@@ -85,3 +85,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614daef887771a4b88bdf8a2e40d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noAnimals: 0
+  animalSound: {fileID: 8300000, guid: c5f9885f2065335499e78a0eff43855e, type: 3}

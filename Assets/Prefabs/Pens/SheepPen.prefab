@@ -89,3 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3388f0d5978421845b245ab62212a6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noAnimals: 0
+  animalSound: {fileID: 8300000, guid: 9fb12906474c38d478b3c619646731c7, type: 3}
