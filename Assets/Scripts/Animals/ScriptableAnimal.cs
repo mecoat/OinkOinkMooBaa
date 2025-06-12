@@ -9,8 +9,6 @@ public class ScriptableAnimal : ScriptableObject
 
     public BaseAnimal animalPrefab;
 
-    public AudioClip animalSound;
-
 }
 public enum Animal
 {
