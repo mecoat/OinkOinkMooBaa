@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4118470926088198042, guid: 947981ce02697804389bf4045717543e, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 78
+      objectReference: {fileID: 0}
     - target: {fileID: 6491182088285533110, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Name
       value: Cow
