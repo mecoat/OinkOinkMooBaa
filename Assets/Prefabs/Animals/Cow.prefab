@@ -90,3 +90,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homeTile: {fileID: 0}
+  animalSound: {fileID: 8300000, guid: 59efb8991f6ed344684df0b404655ab4, type: 3}

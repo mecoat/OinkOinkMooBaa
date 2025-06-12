@@ -89,3 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e593084f51d69e419b520170efb49e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  homeTile: {fileID: 0}
+  animalSound: {fileID: 8300000, guid: 6524b344a65752142b6bee47182aba19, type: 3}
