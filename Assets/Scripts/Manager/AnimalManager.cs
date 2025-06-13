@@ -25,6 +25,8 @@ public class AnimalManager : MonoBehaviour
         for (int i = 0; i < noToSpawn; i++)
         {
             var spawnedAnimal = Instantiate(animalPrefab);
+            spawnedAnimal.name = animalPrefab.name;
+
             var randomSpawnTile = GridManager.Instance.GetSpawnTile();
 
             randomSpawnTile.SetAnimal(spawnedAnimal);

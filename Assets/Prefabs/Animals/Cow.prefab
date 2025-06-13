@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4118470926088198042, guid: 947981ce02697804389bf4045717543e, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 78
+      objectReference: {fileID: 0}
     - target: {fileID: 6491182088285533110, guid: 947981ce02697804389bf4045717543e, type: 3}
       propertyPath: m_Name
       value: Cow
@@ -91,3 +95,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeTile: {fileID: 0}
   animalSound: {fileID: 8300000, guid: 59efb8991f6ed344684df0b404655ab4, type: 3}
+  badCollideSound: {fileID: 8300000, guid: 14a41ea9dfdfb9c42beda62741760f07, type: 3}
+  goodCollideSound: {fileID: 8300000, guid: 8a97e26a2c039594ea093ad896fce4d8, type: 3}

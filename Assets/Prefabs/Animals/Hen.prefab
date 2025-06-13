@@ -91,3 +91,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeTile: {fileID: 0}
   animalSound: {fileID: 8300000, guid: c5f9885f2065335499e78a0eff43855e, type: 3}
+  badCollideSound: {fileID: 8300000, guid: 14a41ea9dfdfb9c42beda62741760f07, type: 3}
+  goodCollideSound: {fileID: 8300000, guid: 8a97e26a2c039594ea093ad896fce4d8, type: 3}

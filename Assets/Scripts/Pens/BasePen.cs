@@ -5,6 +5,8 @@ using UnityEngine;
 public class BasePen : MonoBehaviour
 {
     public int noAnimals;
+
+    public GameObject targetAnimal;
     
     [SerializeField]
     private AudioClip animalSound;
@@ -46,6 +48,20 @@ public class BasePen : MonoBehaviour
 
             sound.PlayOneShot(animalSound);
             yield return new WaitForSeconds(delayTime);
+
+        }
+    }
+
+    public bool CheckMatch()
+    {
+        if (noAnimals > 0)
+        {
+            noAnimals--;
+            return true;
+        }
+        else
+        {
+            return false;
 
         }
     }
