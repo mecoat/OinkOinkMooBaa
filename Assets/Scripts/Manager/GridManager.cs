@@ -120,11 +120,14 @@ public class GridManager : MonoBehaviour
 
     public int getGridHeight()
     {
+        //Debug.Log("returning " + gridHeight);
+
         return (gridHeight);
     }
 
     public int getGridWidth()
     {
+        //Debug.Log("returning " + gridWidth);
         return gridWidth;
     }
 }
