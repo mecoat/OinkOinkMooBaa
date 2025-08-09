@@ -19,6 +19,12 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private Transform cameraTrans;
 
+    [SerializeField]
+    private Camera mainCam;
+
+    [SerializeField]
+    private Transform sceneObjects;
+
     private Dictionary<Vector2, Tile> farmTiles;
     private List<Vector2> farmTilesKeys;
 
@@ -66,6 +72,7 @@ public class GridManager : MonoBehaviour
 
                 var spawnedTile = Instantiate(selectedTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
+                spawnedTile.transform.SetParent(sceneObjects);
 
                 //var isEdge = (x < 2 || x >= gridWidth - 2 || y < 2 || y >= gridHeight - 2);
                 //spawnedTile.Init(isOffset, isEdge);
@@ -76,12 +83,18 @@ public class GridManager : MonoBehaviour
                 {
                     farmTiles[new Vector2(x, y)] = spawnedTile;
                 }
+
+
             }
         }
 
         farmTilesKeys = farmTiles.Keys.ToList();
 
-        cameraTrans.transform.position = new Vector3((float)gridWidth / 2 - .5f, (float)gridHeight / 2 - .5f, -10);
+        //mainCam.rect = new Rect(0.5f / getGridWidth(), 0.5f / getGridHeight(), getGridWidth() - 1, getGridHeight() - 1);
+        //mainCam.gateFit = Camera.GateFitMode.None;
+
+
+        //cameraTrans.transform.position = new Vector3((float)gridWidth / 2 - .5f, (float)gridHeight / 2 - .5f, -10);
 
         GameManager.Instance.UpdateGameState(GameState.SpawnPens);
     }
@@ -107,11 +120,14 @@ public class GridManager : MonoBehaviour
 
     public int getGridHeight()
     {
+        //Debug.Log("returning " + gridHeight);
+
         return (gridHeight);
     }
 
     public int getGridWidth()
     {
+        //Debug.Log("returning " + gridWidth);
         return gridWidth;
     }
 }

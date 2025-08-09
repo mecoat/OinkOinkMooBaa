@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     private List<PensToSpawn> pensToSpawn;
 
+    [SerializeField]
+    private GameObject sceneHolder;
+
     private void Awake()
     {
         Instance = this;
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
 
                 }
 
+                sceneHolder.GetComponent<ScaleSceneObj>().scaleSceneView();
 
                 UpdateGameState(GameState.Playing);
 

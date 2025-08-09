@@ -10,6 +10,9 @@ public class AnimalManager : MonoBehaviour
 
     private List<ScriptableAnimal> animals;
 
+    [SerializeField]
+    private Transform sceneObjects;
+
     private void Awake()
     {
         Instance = this;
@@ -26,6 +29,9 @@ public class AnimalManager : MonoBehaviour
         {
             var spawnedAnimal = Instantiate(animalPrefab);
             spawnedAnimal.name = animalPrefab.name;
+
+            spawnedAnimal.transform.SetParent(sceneObjects);
+
 
             var randomSpawnTile = GridManager.Instance.GetSpawnTile();
 
