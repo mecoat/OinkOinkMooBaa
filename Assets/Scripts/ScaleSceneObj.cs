@@ -16,16 +16,30 @@ public class ScaleSceneObj : MonoBehaviour
 
     private Vector2 screenRatio;
 
+    private void Awake()
+    {
+        mainCam = Camera.main;
+        screenRes = new Vector2(Screen.width, Screen.height);
+
+        //Debug.Log("campos " + mainCam.transform.position);
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
 
-        mainCam = Camera.main;
-        screenRes = new Vector2(Screen.width, Screen.height);
+       // mainCam = Camera.main;
+        //screenRes = new Vector2(Screen.width, Screen.height);
 
-        calGameRatio();
+        //Debug.Log("campos " + mainCam.transform.position);
 
-        calScreenRatio();
+        //calGameRatio();
+
+        //calScreenRatio();
+
+        //Debug.Log(gameRatio);
+        //Debug.Log(screenRatio);
 
         //scaleSceneView();
     }
@@ -47,6 +61,13 @@ public class ScaleSceneObj : MonoBehaviour
     //private void scaleSceneView()
     public void scaleSceneView()
     {
+        calGameRatio();
+
+        calScreenRatio();
+
+        //Debug.Log(gameRatio);
+        //Debug.Log(screenRatio);
+
         //float objToCamDist = Vector3.Distance(gameObject.transform.position, mainCam.transform.position);
 
         //float objHeightScale = (2.0f * Mathf.Tan(0.5f * mainCam.fieldOfView * Mathf.Deg2Rad) * objToCamDist) / 10.00f;
@@ -58,10 +79,17 @@ public class ScaleSceneObj : MonoBehaviour
         //float objHeightScale = (screenRatio.x * (gameRatio.y / gameRatio.x)) / gameRatio.x;
         //float objWidthScale = (screenRatio.y * (gameRatio.x / gameRatio.y)) / gameRatio.x;
 
+        //Debug.Log(gameRatio);
+        //Debug.Log(screenRatio);
+
+
         float objHeightScale = screenRatio.y / gameRatio.y;
         float objWidthScale = screenRatio.x / gameRatio.x;
 
-        float scaleDivisor = 1;
+        //Debug.Log(objWidthScale);
+        //Debug.Log(objHeightScale);
+
+        float scaleDivisor;
 
         if (objWidthScale > objHeightScale)
         {
@@ -90,6 +118,8 @@ public class ScaleSceneObj : MonoBehaviour
     {
         gameRatio.x = gridManager.getGridWidth();
         gameRatio.y = gridManager.getGridHeight();
+
+        //Debug.Log("calgameRatio " + gridManager.getGridWidth());
 
     }
 

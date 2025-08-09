@@ -93,6 +93,9 @@ public class BaseAnimal : MonoBehaviour
         if (collision.gameObject.tag == "Animal")
         {
             Debug.Log("hit animal");
+            Debug.Log("hit " + collision.gameObject.name);
+            Debug.Log("hit " + collision.gameObject.transform.position);
+            Debug.Log("home @ " + collision.gameObject.transform.localPosition);
 
             sound.PlayOneShot(badCollideSound);
 
