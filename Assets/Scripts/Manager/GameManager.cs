@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GenerateGrid:
+                GridManager.Instance.setGridSize(6, 8);
                 GridManager.Instance.GenerateGrid();
                 break;
             case GameState.SpawnPens:
