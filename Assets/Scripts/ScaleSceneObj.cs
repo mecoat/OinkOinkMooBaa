@@ -161,14 +161,24 @@ public class ScaleSceneObj : MonoBehaviour
         // cam 1.5> 4.55 x, 3.5>4 y (grid 8,16)
 
 
-        //hd 1920,1080
+        //hd 1920,1080 (camWidth 17.7777777....)
         // cam 1.5>2.95 x, 3.5>1y (grid 6,10)
         // cam 1.5>11.8 x, 3.5 >6 y (grid 12,20)
-        // cam 1.5> 7.1 x, 3.5>4 y (grid 8,16)
+        // cam 1.5>7.1 x, 3.5>4 y (grid 8,16)
 
-        //1,2
-        //scale wrong
-        
+        //1,2 (camWidth 5)
+        // cam 1.5>0.83 x, 3.5>1y (grid 6,10)
+        // cam 1.5>3.35 x, 3.5 >6 y (grid 12,20)
+        // cam 1.5>2 x, 3.5>4 y (grid 8,16)
+
+        float camX = (float)camWidth/2 + 0.5f;
+        Debug.Log(camX);
+
+        float camY = (gameRatio.y/2) - 4;
+        //Debug.Log(camY);
+
+        mainCam.transform.position = new Vector3(camX, camY, -10);
+
     }
 
     private void calGameRatio()
