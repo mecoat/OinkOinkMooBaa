@@ -11,6 +11,9 @@ public class BasePen : MonoBehaviour
     [SerializeField]
     private AudioClip animalSound;
 
+    [SerializeField]
+    private AudioClip completeSound;
+
     //holder for the desired Audiosource on the object
     private AudioSource sound;
 
@@ -40,16 +43,25 @@ public class BasePen : MonoBehaviour
 
     IEnumerator CoPlayDelayedClip(int noPlays)
     {
-        float delayTime = animalSound.length;
-        Debug.Log(noPlays);
-
-        for (var i = 0; i < noPlays; i++)
+        if (noPlays == 0)
         {
-
-            sound.PlayOneShot(animalSound);
-            yield return new WaitForSeconds(delayTime);
-
+            sound.PlayOneShot(completeSound);
         }
+        else
+        {
+            float delayTime = animalSound.length;
+            Debug.Log(noPlays);
+
+            for (var i = 0; i < noPlays; i++)
+            {
+
+                sound.PlayOneShot(animalSound);
+                yield return new WaitForSeconds(delayTime);
+
+            }
+        }
+
+        
     }
 
     public bool CheckMatch()

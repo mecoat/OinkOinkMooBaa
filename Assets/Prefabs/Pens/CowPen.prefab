@@ -90,4 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noAnimals: 0
+  targetAnimal: {fileID: 0}
   animalSound: {fileID: 8300000, guid: 59efb8991f6ed344684df0b404655ab4, type: 3}
+  completeSound: {fileID: 8300000, guid: 8a97e26a2c039594ea093ad896fce4d8, type: 3}
