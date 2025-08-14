@@ -90,7 +90,7 @@ public class ScaleSceneObj : MonoBehaviour
 
         mainCam.orthographicSize = mainCam.orthographicSize / objHeightTo16;
 
-        Debug.Log(mainCam.orthographicSize * 2.0 * Screen.width / Screen.height);
+        Debug.Log("camWidth " + mainCam.orthographicSize * 2.0 * Screen.width / Screen.height);
 
         double camWidth = mainCam.orthographicSize * 2.0 * Screen.width / Screen.height;
 
@@ -161,23 +161,31 @@ public class ScaleSceneObj : MonoBehaviour
         // cam 1.5> 4.55 x, 3.5>4 y (grid 8,16)
 
 
-        //hd 1920,1080 (camWidth 17.7777777....)
+        //hd 1920,1080 (camWidth 17.7777777....) (objWidth scale 2.962963)
         // cam 1.5>2.95 x, 3.5>1y (grid 6,10)
-        // cam 1.5>11.8 x, 3.5 >6 y (grid 12,20)
-        // cam 1.5>7.1 x, 3.5>4 y (grid 8,16)
+        // cam 1.5>11.8 x, 3.5 >6 y (grid 12,20) 
+        // cam 1.5>7.1 x, 3.5>4 y (grid 8,16) 
 
-        //1,2 (camWidth 5)
+        //1,2 (camWidth 5) (objWidth scale .83333333)
         // cam 1.5>0.83 x, 3.5>1y (grid 6,10)
-        // cam 1.5>3.35 x, 3.5 >6 y (grid 12,20)
+        // cam 1.5>3.35 x, 3.5 >6 y (grid 12,20) 
         // cam 1.5>2 x, 3.5>4 y (grid 8,16)
 
-        float camX = (float)camWidth/2 + 0.5f;
-        Debug.Log(camX);
+        //float camX = gameRatio.x / 2 * objWidthFloat;
+        //float camX = objWidthFloat;
+        float camX = 0;
+
+        Debug.Log("gameX " + gameRatio.x);
+        Debug.Log("objScale " + objWidthFloat);
+
+        Debug.Log("camX " + camX);
 
         float camY = (gameRatio.y/2) - 4;
         //Debug.Log(camY);
 
         mainCam.transform.position = new Vector3(camX, camY, -10);
+        
+        gameObject.transform.position = new Vector3(-((gameRatio.x - 4) / 2 * objWidthFloat), 0, 0);
 
     }
 

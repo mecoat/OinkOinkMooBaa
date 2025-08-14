@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             case GameState.GenerateGrid:
                 //GridManager.Instance.setGridSize(8, 16);
                 //GridManager.Instance.setGridSize(12, 20);
-                GridManager.Instance.setGridSize(6, 10);
+                GridManager.Instance.setGridSize(6, 12);
                 GridManager.Instance.GenerateGrid();
                 break;
             case GameState.SpawnPens:
