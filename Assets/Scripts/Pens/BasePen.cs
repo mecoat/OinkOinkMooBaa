@@ -11,6 +11,9 @@ public class BasePen : MonoBehaviour
     [SerializeField]
     private AudioClip animalSound;
 
+    [SerializeField]
+    private AudioClip completeSound;
+
     //holder for the desired Audiosource on the object
     private AudioSource sound;
 
