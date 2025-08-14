@@ -45,6 +45,12 @@ public class GridManager : MonoBehaviour
     {
         
     }
+    
+    public void setGridSize(int inGridWidth, int inGridHeight)
+    {
+        gridWidth = inGridWidth;
+        gridHeight = inGridHeight;
+    }
 
     public void GenerateGrid()
     {

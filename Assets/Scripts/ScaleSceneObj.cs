@@ -82,36 +82,111 @@ public class ScaleSceneObj : MonoBehaviour
         //Debug.Log(gameRatio);
         //Debug.Log(screenRatio);
 
+        float objHeightTo16 = 16 / gameRatio.y;
+        //float objWidthTo8 = 8 / gameRatio.x;
 
-        float objHeightScale = screenRatio.y / gameRatio.y;
-        float objWidthScale = screenRatio.x / gameRatio.x;
+        //float objHeightTo16 = gameRatio.y / 16;
+        //float objWidthTo8 = gameRatio.x / 8;
 
-        //Debug.Log(objWidthScale);
-        //Debug.Log(objHeightScale);
+        mainCam.orthographicSize = mainCam.orthographicSize / objHeightTo16;
 
-        float scaleDivisor;
+        Debug.Log("camWidth " + mainCam.orthographicSize * 2.0 * Screen.width / Screen.height);
 
-        if (objWidthScale > objHeightScale)
-        {
-            scaleDivisor = objHeightScale;
-        } 
-        else
-        {
-            scaleDivisor = objWidthScale;
-        }
+        double camWidth = mainCam.orthographicSize * 2.0 * Screen.width / Screen.height;
 
-        objWidthScale = objWidthScale / scaleDivisor;
-        objHeightScale = objHeightScale / scaleDivisor;
+        //Debug.Log(objHeightTo16);
+        //Debug.Log(objWidthTo8);
+
+        ///>>>>
+        //float objHeightScale = screenRatio.y / gameRatio.y;
+        //float objWidthScale = screenRatio.x / gameRatio.x;
+        double objWidthScale = camWidth / gameRatio.x;
+        float objWidthFloat = (float)objWidthScale;
+
+        //float objHeightScale = screenRatio.y / (gameRatio.y * objHeightTo16);
+        //float objWidthScale = screenRatio.x / (gameRatio.x * objWidthTo8);
+
+        //float objHeightScale = screenRatio.y / (gameRatio.y / objHeightTo16);
+        //float objWidthScale = screenRatio.x / (gameRatio.x / objWidthTo8);
+
+        //Debug.Log("wide " + objWidthScale);
+        //Debug.Log("high " + objHeightScale);
+
+        ////>>>>>
+        //float scaleDivisor;
+        //if (objWidthScale > objHeightScale)
+        //{
+        //scaleDivisor = objHeightScale;
+        //} 
+        //else
+        //{
+        //scaleDivisor = objWidthScale;
+        //}
+        //scaleDivisor = objWidthTo8;
+        //scaleDivisor = 1;
+
+        //Debug.Log("div " + scaleDivisor);
 
 
-        gameObject.transform.localScale = new Vector3(objWidthScale, objHeightScale, 1);
+        ///>>>
+        //objWidthScale = objWidthScale / scaleDivisor;
+        //objHeightScale = objHeightScale / scaleDivisor;
+
+        //objWidthScale = (objWidthScale / scaleDivisor) * objWidthTo8;
+        //objHeightScale = (objHeightScale / scaleDivisor) * objHeightTo16;
+
+        //objWidthScale = (objWidthScale * objWidthTo8) / scaleDivisor;
+        //objHeightScale = (objHeightScale * objHeightTo16) / scaleDivisor;
+
+        ///>>>
+        //gameObject.transform.localScale = new Vector3(objWidthScale, objHeightScale, 1);
+        //gameObject.transform.localScale = new Vector3(objWidthScale, 1, 1);
+        gameObject.transform.localScale = new Vector3(objWidthFloat, 1, 1);
         //gameObject.transform.localScale = new Vector3(objHeightScale, objWidthScale, 1);
 
         gameObject.transform.position = new Vector3(0, 0, 0);
 
         //Camera.main.transform.position = new Vector3((float)gridWidth / 2 - .5f, (float)gridHeight / 2 - .5f, -10);
         //mainCam.transform.position = new Vector3(transform.position.x + gameRatio.x/2, transform.position.y + gameRatio.y/2, -10);
-        mainCam.transform.position = new Vector3(2 * objWidthScale, 4 * objHeightScale, -10);
+        //mainCam.transform.position = new Vector3(2 * objWidthScale, 4 * objHeightScale, -10);
+        //mainCam.transform.position = new Vector3((gameRatio.x / 4) * objWidthScale, (gameRatio.y / 4) * objHeightScale, -10);
+        //mainCam.transform.position = new Vector3(transform.position.x + (gameRatio.x/ 2 * objWidthScale), transform.position.y + (gameRatio.y/2 * objHeightScale), -10);
+        //mainCam.transform.position = new Vector3((gameRatio.x / 2) * objWidthScale, (gameRatio.y / 2) * objHeightScale, -10);
+        //mainCam.transform.position = new Vector3(transform.position.x + (gameRatio.x / 2 - .5f), transform.position.y + (gameRatio.y / 2 - .5f), -10);
+        //mainCam.transform.position = new Vector3(transform.position.x * objWidthScale, transform.position.y * objHeightScale, -10);
+
+        //freeform
+        // cam 1.5>1.9 x, 3.5>1y (grid 6,10)
+        // cam 1.5>7.6 x, 3.5 >6 y (grid 12,20)
+        // cam 1.5> 4.55 x, 3.5>4 y (grid 8,16)
+
+
+        //hd 1920,1080 (camWidth 17.7777777....) (objWidth scale 2.962963)
+        // cam 1.5>2.95 x, 3.5>1y (grid 6,10)
+        // cam 1.5>11.8 x, 3.5 >6 y (grid 12,20) 
+        // cam 1.5>7.1 x, 3.5>4 y (grid 8,16) 
+
+        //1,2 (camWidth 5) (objWidth scale .83333333)
+        // cam 1.5>0.83 x, 3.5>1y (grid 6,10)
+        // cam 1.5>3.35 x, 3.5 >6 y (grid 12,20) 
+        // cam 1.5>2 x, 3.5>4 y (grid 8,16)
+
+        //float camX = gameRatio.x / 2 * objWidthFloat;
+        //float camX = objWidthFloat;
+        float camX = 0;
+
+        Debug.Log("gameX " + gameRatio.x);
+        Debug.Log("objScale " + objWidthFloat);
+
+        Debug.Log("camX " + camX);
+
+        float camY = (gameRatio.y/2) - 4;
+        //Debug.Log(camY);
+
+        mainCam.transform.position = new Vector3(camX, camY, -10);
+        
+        gameObject.transform.position = new Vector3(-((gameRatio.x - 4) / 2 * objWidthFloat), 0, 0);
+
     }
 
     private void calGameRatio()
@@ -119,7 +194,7 @@ public class ScaleSceneObj : MonoBehaviour
         gameRatio.x = gridManager.getGridWidth();
         gameRatio.y = gridManager.getGridHeight();
 
-        //Debug.Log("calgameRatio " + gridManager.getGridWidth());
+        //Debug.Log("calgameRatio " + gameRatio);
 
     }
 
