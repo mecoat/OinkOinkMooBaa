@@ -122,7 +122,8 @@ public class BaseAnimal : MonoBehaviour
                 else
                 {
                     Debug.Log("play good");
-                    AudioSource.PlayClipAtPoint(goodCollideSound, (Vector2)transform.position);
+                    //AudioSource.PlayClipAtPoint(goodCollideSound, (Vector2)transform.position);
+                    AudioSource.PlayClipAtPoint(goodCollideSound, Camera.main.transform.position, 1f);
                     //sound.PlayOneShot(goodCollideSound);
                     gameObject.SetActive(false);
                 }
